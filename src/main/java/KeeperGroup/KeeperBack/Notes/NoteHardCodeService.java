@@ -1,10 +1,6 @@
 package KeeperGroup.KeeperBack.Notes;
 
 
-
-import KeeperGroup.KeeperBack.KeeperBackApplication;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -14,7 +10,7 @@ import java.util.List;
 public class NoteHardCodeService {
 
     private static List<Note> notes = new ArrayList();
-    private static int idCounter = 1;
+    private static long idCounter = 1;
 
     static{
         notes.add(new Note(idCounter++,"me","Welcome","It is a content","OK"));
@@ -68,8 +64,8 @@ public class NoteHardCodeService {
         }
     }
 
-    public int findFirstIdAvialable() {
-        int freeId  = 1;
+    public long findFirstIdAvialable() {
+        long freeId  = 1;
         boolean dispo = false;
         while (!dispo) {
             dispo = true;

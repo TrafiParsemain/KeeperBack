@@ -1,8 +1,19 @@
 package KeeperGroup.KeeperBack.Notes;
 
+
+import javax.persistence.*;
+
+
+@Entity
 public class Note {
 
-    private long id;
+    //Key of the entity
+    //Auto generated value
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id",updatable = false)
+    private Long id;
+
     private String username;
     private String title;
     private String content;
@@ -21,11 +32,11 @@ public class Note {
         this.statut = statut;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
