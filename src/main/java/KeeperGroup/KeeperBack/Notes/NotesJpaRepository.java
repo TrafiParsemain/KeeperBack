@@ -10,6 +10,7 @@ import java.util.List;
 public interface NotesJpaRepository extends JpaRepository<Note, Long> {
 
         List<Note> findByUsername(String username, Sort id);
+        List<Note> findByUsernameAndStatut(String username,String statut, Sort id);
         List<Note> findAllByOrderByIdAsc();
         //List<Note> findByUsernameByOrderByIdAsc(String username);
 

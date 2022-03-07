@@ -26,14 +26,19 @@ public class NotesJpaRessource {
     private static final Logger LOGGER = LoggerFactory.getLogger(KeeperBackApplication.class);
 
 
-    @GetMapping("/jpa/users/{username}/notes")
-    public List<Note> getAllNotes(@PathVariable String username) throws InterruptedException{
+    @GetMapping("/jpa/users/{username}/notes/{statut}")
+    public List<Note> getAllNotes(@PathVariable String username,@PathVariable String statut) throws InterruptedException{
         //Thread.sleep(3000);
-        LOGGER.info("Get request all note");
+        LOGGER.info("Get request all note with statut : " + statut);
         //return noteService.findAll();
-        return noteJpaRepository.findByUsername(username, Sort.by("id"));
+        //return noteJpaRepository.findByUsername(username, Sort.by("id"));
         //return noteJpaRepository.findAllByOrderByIdAsc();
         //return noteJpaRepository.findByAndSort(username,Sort.by("id"));
+        if(statut.equals("All")){
+            return noteJpaRepository.findByUsername(username, Sort.by("id"));
+        }else{
+            return noteJpaRepository.findByUsernameAndStatut(username,statut, Sort.by("id"));
+        }
     }
 
     @DeleteMapping("/jpa/users/{username}/notes/{id}")
