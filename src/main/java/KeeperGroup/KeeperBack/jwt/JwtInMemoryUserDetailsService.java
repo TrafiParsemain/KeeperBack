@@ -17,7 +17,12 @@ public class JwtInMemoryUserDetailsService implements UserDetailsService {
   static {
     inMemoryUserList.add(new JwtUserDetails(1L, "me",
         "$2a$10$siPUVAFawFBbYQD2i43S6.V83wudYbTiBvik/VFj1EsVseLYiNn/S", "ROLE_USER_2"));
+    inMemoryUserList.add(new JwtUserDetails(1L, "Trafi",
+            "$2a$10$WXzMHU0Tl4No/zEIzYBmv.2dQtZm3SP/G9zUIob8VBwvmN.wBREKa", "ROLE_USER_3"));
   }
+
+  //BCryptPasswordEncoder
+  //Bcrypt hash
 
   //"$2a$10$siPUVAFawFBbYQD2i43S6.V83wudYbTiBvik/VFj1EsVseLYiNn/S" mine
 //"$2a$10$3zHzb.Npv1hfZbLEU5qsdOju/tk2je6W6PnNnY.c1ujWPcZh4PL6e"
