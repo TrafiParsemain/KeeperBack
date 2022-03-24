@@ -40,6 +40,7 @@ public class CsvExportService {
         } catch (IOException e) {
             log.error("Error While writing CSV ", e);
         }
+
         //Ecriture locale
         try (CSVPrinter csvPrinter = new CSVPrinter(new FileWriter(("C:\\Users\\Parsemain\\Desktop\\Protect\\NotesEntity.csv")), CSVFormat.EXCEL)) {
             csvPrinter.printRecord("ID", "Title", "Content", "Statut","Username");

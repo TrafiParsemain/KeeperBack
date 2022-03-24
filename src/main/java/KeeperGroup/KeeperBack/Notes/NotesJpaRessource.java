@@ -76,7 +76,7 @@ public class NotesJpaRessource {
 
         //return new ResponseEntity<Note>(noteAdded, HttpStatus.OK);
 
-        //Renvoi l'URL de L'objet creer
+        //Renvoi l'URL de L'objet créé
         URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri()
                 .path("/{id}").buildAndExpand(noteAdded.getId()).toUri();
 
