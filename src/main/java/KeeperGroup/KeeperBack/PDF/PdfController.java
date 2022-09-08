@@ -18,6 +18,8 @@ import java.io.OutputStream;
 public class PdfController {
     private static final Logger LOGGER = LoggerFactory.getLogger(KeeperBackApplication.class);
 
+
+
     @RequestMapping(path = "/get-pdf-template")
     public void getPdfTemplate(HttpServletResponse servletResponse) throws IOException {
         LOGGER.info("Get request buffer PDF Template");
